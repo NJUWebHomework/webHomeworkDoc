@@ -102,7 +102,7 @@ Response
     #### 2. 获得运动数据
 >默认为一周内的数据
 
-```
+    ```
 GET /stat/{username}/sport
 ```
 Parameters
@@ -131,7 +131,7 @@ Response
     #### 3. 获得睡眠数据
 >默认为一周内的数据
 
-```
+    ```
 GET /stat/{username}/sleeping
 ```
 Parameters
