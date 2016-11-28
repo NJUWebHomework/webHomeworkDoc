@@ -82,6 +82,42 @@ Response
 }
 ```
 
+    #### 3. 删除用户
+>需要管理员权限
+
+    ```
+put /users/{username}
+```
+Parameters
+```javascript
+{
+    location:"string",
+    avatar:"url",
+    height:0,
+    weight:0,
+    gender:"male"|"female",
+    description:"string",
+    goal:0                //每日目标步数
+}
+```
+Response
+```
+{
+    username:"string",
+    signUpDate:"yyyy-MM-dd",
+    location:"string",
+    avatar:"url",
+    height:0,
+    weight:0,
+    gender:"male"|"female",
+    BMI:1.2             //BMI健康指数
+    description:"string",
+    watchedCount:"string",
+    watchingCount:"string"
+    goal:0                //每日目标步数
+}
+```
+
 ### 2. statistics
 1. #### 获得总体统计
 ```
@@ -270,7 +306,9 @@ Response
 ```
 
     #### 3. 删除动态
-```
+>动态所有者和管理员拥有权限
+
+    ```
 DELETE /users/{username}/activities/{id}
 ```
 Parameters
@@ -367,7 +405,9 @@ Response
 ```
 
     #### 3. 删除竞赛
-```
+>动态所有者和管理员拥有权限
+
+    ```
 DELETE /users/{username}/competitions/{id}
 ```
 Parameters
@@ -425,41 +465,3 @@ Response
     }
 ]
 ```
-
-    #### 2. 搜索竞赛
->默认只搜索未开始的竞赛
-
-    ```
-    GET /search/competitions
-    ```
-
-    URL Parameters
-    ```
-    key : string    //关键字
-    ```
-    Parameters
-    ```javascript
-    null
-    ```
-    Response
-    ```javascript
-    [
-        {
-            id:"string",
-            name:"string",
-            description:"string",
-            type:"single"|"team",       //个人竞赛,团队竞赛
-            totalNumber:0,              //总人数
-            currentNumber:0,            //当前人数
-            startTime:"yyyy-MM-dd",
-            endTime:"yyyy-MM-dd",
-            score:0,                     //积分
-            started:false,               //是否开始
-            owner:{
-                username:"string",
-                location:"string",
-                avatar:"url"
-            }
-        }
-    ]
-    ```
