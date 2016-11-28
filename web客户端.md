@@ -43,8 +43,8 @@ GET /users/{username}
         gender:"male"|"female",
         BMI:1.2             //BMI健康指数
         description:"string",
-        watchedCount:"string",
-        watchingCount:"string"
+        watchedCount:1,
+        watchingCount:1,
         goal:0                //每日目标步数
     }
     ```
@@ -76,8 +76,8 @@ Response
     gender:"male"|"female",
     BMI:1.2             //BMI健康指数
     description:"string",
-    watchedCount:"string",
-    watchingCount:"string"
+    watchedCount:1,
+    watchingCount:1,
     goal:0                //每日目标步数
 }
 ```
@@ -110,10 +110,10 @@ Response
     height:0,
     weight:0,
     gender:"male"|"female",
-    BMI:1.2             //BMI健康指数
+    BMI:1.2,             //BMI健康指数
     description:"string",
-    watchedCount:"string",
-    watchingCount:"string"
+    watchedCount:1,
+    watchingCount:1,
     goal:0                //每日目标步数
 }
 ```
